@@ -1,0 +1,1 @@
+chrome-extension://pcblbflgdkdfdjpjifeppkljdnaekohj/shared-fe-translations/en-US.json.gz
