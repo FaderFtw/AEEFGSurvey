@@ -28792,7 +28792,8 @@
                         Primaire: ["1\xe8re", "2\xe8me", "3\xe8me", "4\xe8me", "5\xe8me", "6\xe8me"],
                         "Coll\xe8ge": ["7\xe8me", "8\xe8me", "9\xe8me"],
                         Secondaire: ["1\xe8re", "2\xe8me", "3\xe8me", "Baccalaur\xe9at"],
-                        "Universit\xe9": ["Licence", "Mast\xe8re", "Doctorat", "Cycle Ing\xe9nieur"]
+                        "Universit\xe9": ["Licence", "Mast\xe8re", "Doctorat", "Cycle Ing\xe9nieur"],
+                        "Enseignant": ["Primaire", "Coll\xe8ge", "Secondaire", "Universit\xe9"]
                     }, {
                         question: "Nom de l'institution"
                     }, {
@@ -31908,6 +31909,22 @@
                         }, {
                             name: "Cycle Ing\xe9nieur",
                             translations: ["Cycle Ing\xe9nieur", "Engineering Cycle", "\u0645\u0647\u0646\u062f\u0633"]
+                        },
+                        {
+                            name: "Primaire",
+                            translations: ["Primaire", "Primary", "\u0627\u0628\u062a\u062f\u0627\u0626\u064a"]
+                        },
+                        {
+                            name: "Coll\xe8ge",
+                            translations: ["Coll\xe8ge", "Middle School", "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629"]
+                        },
+                        {
+                            name: "Secondaire",
+                            translations: ["Secondaire", "Secondary", "\u062b\u0627\u0646\u0648\u064a"]
+                        },
+                        {
+                            name: "Universit\xe9",
+                            translations: ["Universit\xe9", "University", "\u062c\u0627\u0645\u0639\u0629"]
                         }], this.regions = [{
                             name: "Grand Tunis",
                             translations: ["Grand Tunis", "\u062a\u0648\u0646\u0633 \u0627\u0644\u0643\u0628\u0631\u0649"]
@@ -32144,7 +32161,8 @@
                     "\u0627\u0628\u062a\u062f\u0627\u0626\u064a": ["\u0623\u0648\u0644\u0649", "\u062b\u0627\u0646\u064a\u0629", "\u062b\u0627\u0644\u062b\u0629", "\u0631\u0627\u0628\u0639\u0629", "\u062e\u0627\u0645\u0633\u0629", "\u0633\u0627\u062f\u0633\u0629 "],
                     "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629": ["\u0627\u0644\u0633\u0627\u0628\u0639\u0629 ", "\u0627\u0644\u062b\u0627\u0645\u0646\u0629 ", "\u0627\u0644\u062a\u0627\u0633\u0639\u0629"],
                     "\u062b\u0627\u0646\u0648\u064a": ["\u0627\u0644\u0623\u0648\u0644\u0649", "\u0627\u0644\u062b\u0627\u0646\u064a\u0629", "\u0627\u0644\u062b\u0627\u0644\u062b\u0629", "\u0627\u0644\u0628\u0643\u0627\u0644\u0648\u0631\u064a\u0627"],
-                    "\u062c\u0627\u0645\u0639\u0629": ["\u0627\u0644\u0625\u062c\u0627\u0632\u0629", "\u0645\u0627\u062c\u0633\u062a\u064a\u0631", "\u062f\u0643\u062a\u0648\u0631\u0627\u0647", "\u0645\u0647\u0646\u062f\u0633"]
+                    "\u062c\u0627\u0645\u0639\u0629": ["\u0627\u0644\u0625\u062c\u0627\u0632\u0629", "\u0645\u0627\u062c\u0633\u062a\u064a\u0631", "\u062f\u0643\u062a\u0648\u0631\u0627\u0647", "\u0645\u0647\u0646\u062f\u0633"],
+                    "\u0645\u064f\u062f\u064e\u0631\u0650\u0651\u0633": ["\u0627\u0628\u062a\u062f\u0627\u0626\u064a", "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629", "\u062b\u0627\u0646\u0648\u064a", "\u062c\u0627\u0645\u0639\u0629"]
                 }, {
                     question: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0624\u0633\u0633\u0629 "
                 }, {
@@ -32245,7 +32263,8 @@
                         Primary: ["1st", "2nd", "3rd", "4th", "5th", "6th"],
                         "Middle School": ["7th", "8th", "9th"],
                         Secondary: ["1st", "2nd", "3rd", "Baccalaur\xe9at"],
-                        University: ["Bachelor's", "Master's", "PhD", "Engineering Cycle"]
+                        University: ["Bachelor's", "Master's", "PhD", "Engineering Cycle"],
+                        "Teacher": ["Primary", "Middle School", "Secondary", "University"]
                     }, {
                         question: "Institution name "
                     }, {

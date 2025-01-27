@@ -1897,7 +1897,7 @@ h6 {
 }
 
 .bg-gradient-success {
-  background: linear-gradient(87deg, #2dce89, #2dcecc) !important;
+  background: linear-gradient(87deg, #2e4afb, #36a575) !important;
 }
 
 .bg-gradient-info {
@@ -2640,4 +2640,20 @@ th {
 
 .card {
   box-shadow: 0 10px 15px -3px #0000001a !important;
+}
+
+.firstSection:has(> span) .form-group:nth-of-type(3) {
+  display: none;
+}
+
+.btn-success {
+  color: #fff;
+}
+
+.form-check .form-check-input {
+  margin-left: 0 !important;
+}
+
+.row > .col-md-6.col-xl-3:last-child .btn {
+  padding: 5px 10px !important;
 }
