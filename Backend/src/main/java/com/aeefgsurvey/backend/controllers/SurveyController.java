@@ -30,4 +30,11 @@ public class SurveyController {
         return surveyService.createSurvey(survey);
     }
 
+    @PostMapping("/batch")
+    public List<Survey> createSurveys(@RequestBody List<Survey> surveys) {
+        return surveys.stream()
+                .map(surveyService::createSurvey)
+                .toList();
+    }
+
 }

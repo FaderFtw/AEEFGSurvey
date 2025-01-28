@@ -32230,25 +32230,25 @@
                 title: "\u0627\u0644\u0642\u0633\u0645 3: \u0627\u0644\u0645\u0645\u0627\u0631\u0633\u0627\u062a",
                 data: [{
                     question: "\u0647\u0644 \u062a\u0633\u062a\u0639\u0645\u0644  \u0645\u0648\u0627\u062f \u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0630\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0648\u0627\u062d\u062f \u0641\u064a \u062d\u064a\u0627\u062a\u0643 \u0627\u0644\u064a\u0648\u0645\u064a\u0629 \u0645\u062b\u0644 \u0627\u0644\u0623\u0643\u0648\u0627\u0628 \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0648\u0627\u0644\u0634\u0641\u0627\u0637\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0644\u0634\u0631\u0628 \u0627\u0644\u0639\u0635\u064a\u0631 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u0633\u0628\u0642 \u0644\u0643 \u0627\u0644\u0645\u0634\u0627\u0631\u0643\u0629 \u0641\u064a \u0645\u0628\u0627\u062f\u0631\u0627\u062a \u0625\u0639\u0627\u062f\u0629 \u062a\u062f\u0648\u064a\u0631 \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u0623\u0648 \u0627\u0644\u062d\u062f \u0645\u0646 \u0627\u0644\u0646\u0641\u0627\u064a\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0639\u0646\u062f\u0645\u0627 \u062a\u0634\u0627\u0647\u062f \u0646\u0641\u0627\u064a\u0627\u062a \u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u060c \u0647\u0644 \u062a\u0644\u062a\u0642\u0637\u0647\u0627 \u0648\u062a\u0631\u0645\u064a\u0647\u0627 \u0641\u064a \u0633\u0644\u0629 \u0627\u0644\u0645\u0647\u0645\u0644\u0627\u062a \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u0627\u062a\u062e\u0630\u062a \u062e\u0637\u0648\u0627\u062a \u0641\u0639\u0644\u064a\u0629 \u0644\u0644\u062d\u062f \u0645\u0646 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0643 \u0627\u0644\u0634\u062e\u0635\u064a \u0644\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u0641\u064a \u062d\u064a\u0627\u062a\u0643 \u0627\u0644\u064a\u0648\u0645\u064a\u0629 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u0633\u062a\u062e\u062f\u0645 \u0628\u062f\u0627\u0626\u0644\u060c \u0645\u062b\u0644 \u0632\u062c\u0627\u062c\u0627\u062a \u0627\u0644\u0645\u064a\u0627\u0647 \u0623\u0648 \u0627\u0644\u0623\u0643\u064a\u0627\u0633 \u0627\u0644\u0642\u0627\u0628\u0644\u0629 \u0644\u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645\u060c \u0644\u062a\u0642\u0644\u064a\u0644 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0643 \u0644\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u062a\u062e\u0644\u0635 \u0645\u0646 \u0627\u0644\u0646\u0641\u0627\u064a\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0628\u0634\u0643\u0644 \u0635\u062d\u064a\u062d \u0639\u0646\u062f \u0630\u0647\u0627\u0628\u0643 \u0644\u0644\u0634\u0627\u0637\u0626 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u0634\u0627\u0631\u0643 \u0641\u064a \u0628\u0631\u0627\u0645\u062c \u062a\u0646\u0638\u064a\u0641 \u0627\u0644\u0634\u0648\u0627\u0637\u0626 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }]
             }],
                 Dg = [{
@@ -34263,7 +34263,7 @@
                             ngOnInit() { }
                             ngAfterViewInit() { }
                             startQuestions() {
-                                console.log(this.age), this.age && this.ville && this.proffesion && this.education && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
+                                console.log(this.age), this.age && this.ville && this.education && this.educationLevel && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
                             }
                             setLang(e) {
                                 switch (document.getElementById("myVideo").play(), document.getElementById("myAudio").play(), this.lang = e, this.lang) {
@@ -34285,7 +34285,6 @@
                                     education: this.education,
                                     educationLevel: this.educationLevel,
                                     institution: this.institution,
-                                    proffesion: this.proffesion,
                                     ville: this.ville,
                                     responses: this.responses
                                 };
