@@ -29583,7 +29583,7 @@
                             this.http = e, this.apiUrl = "/api/survey"
                         }
                         getSurveyData() {
-                            const e = (new ym).set("Content-Type", "application/json");
+                            const e = (new ym).set("Content-Type", "application/json; charset=utf-8");
                             return this.http.get(this.apiUrl, {
                                 headers: e
                             })
@@ -34288,7 +34288,7 @@
                                     responses: this.responses
                                 };
                                 const t = new ym({
-                                    "Content-Type": "application/json"
+                                    "Content-Type": "application/json; charset=utf-8"
                                 });
                                 this.http.post("/api/survey", e, {
                                     headers: t
