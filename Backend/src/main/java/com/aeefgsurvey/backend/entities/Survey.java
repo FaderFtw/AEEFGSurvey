@@ -40,13 +40,16 @@ public class Survey {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    @Version
     private Integer __v;
 
     @PrePersist
     public void generateId() {
         if (this._id == null) {
             this._id = UUID.randomUUID().toString();
+        }
+
+        if (this.__v == null) {
+            this.__v = 0;
         }
     }
 

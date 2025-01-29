@@ -29137,7 +29137,31 @@
                     return null === this.body ? null : wm(this.body) || Lm(this.body) || km(this.body) || "string" == typeof this.body ? this.body : this.body instanceof Mm ? this.body.toString() : "object" == typeof this.body || "boolean" == typeof this.body || Array.isArray(this.body) ? JSON.stringify(this.body) : this.body.toString()
                 }
                 detectContentTypeHeader() {
-                    return null === this.body || km(this.body) ? null : Lm(this.body) ? this.body.type || null : wm(this.body) ? null : "string" == typeof this.body ? "text/plain" : this.body instanceof Mm ? "application/x-www-form-urlencoded;charset=UTF-8" : "object" == typeof this.body || "number" == typeof this.body || "boolean" == typeof this.body ? "application/json" : null
+                    if (null === this.body || km(this.body)) {
+                        return null;
+                    }
+
+                    if (Lm(this.body)) {
+                        return this.body.type ? `${this.body.type}; charset=UTF-8` : null;
+                    }
+
+                    if (wm(this.body)) {
+                        return null;
+                    }
+
+                    if (typeof this.body === "string") {
+                        return "text/plain; charset=UTF-8";
+                    }
+
+                    if (this.body instanceof Mm) {
+                        return "application/x-www-form-urlencoded; charset=UTF-8";
+                    }
+
+                    if (typeof this.body === "object" || typeof this.body === "number" || typeof this.body === "boolean") {
+                        return "application/json; charset=UTF-8";
+                    }
+
+                    return null;
                 }
                 clone(e = {}) {
                     const t = e.method || this.method,
@@ -29583,10 +29607,13 @@
                             this.http = e, this.apiUrl = "/api/survey"
                         }
                         getSurveyData() {
-                            const e = (new ym).set("Content-Type", "application/json; charset=utf-8");
+                            const headers = (new ym)
+                                .set("Content-Type", "application/json; charset=UTF-8")
+                                .set("Accept", "application/json; charset=UTF-8");
+
                             return this.http.get(this.apiUrl, {
-                                headers: e
-                            })
+                                headers: headers
+                            });
                         }
                     }
                     return e.\u0275fac = function (t) {
@@ -34288,7 +34315,8 @@
                                     responses: this.responses
                                 };
                                 const t = new ym({
-                                    "Content-Type": "application/json; charset=utf-8"
+                                    "Content-Type": "application/json; charset=UTF-8",
+                                    'Accept': 'application/json; charset=UTF-8'
                                 });
                                 this.http.post("/api/survey", e, {
                                     headers: t

@@ -3,6 +3,10 @@ package com.aeefgsurvey.backend.controllers;
 import com.aeefgsurvey.backend.entities.Survey;
 import com.aeefgsurvey.backend.services.SurveyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +19,11 @@ public class SurveyController {
     private SurveyService surveyService;
 
     @GetMapping
-    public List<Survey> getAllSurveys() {
-        return surveyService.getAllSurveys();
+    public ResponseEntity<List<Survey>> getAllSurveys() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        List<Survey> surveys = surveyService.getAllSurveys();
+        return new ResponseEntity<>(surveys, headers, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

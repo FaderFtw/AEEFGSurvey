@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 @Embeddable
 public class Response {
     private String section;
+    @Column(columnDefinition = "TEXT")
     private String question;
+
+    @Column(columnDefinition = "TEXT")
     private String response;
 }
