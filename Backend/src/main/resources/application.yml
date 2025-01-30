@@ -10,7 +10,7 @@ spring:
   application:
     name: backend
   datasource:
-    url: jdbc:mysql://localhost:3306/surveydb?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://db:3306/surveydb?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
