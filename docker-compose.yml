@@ -36,7 +36,6 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: mysql_db
     environment:
       MYSQL_DATABASE: surveydb
       MYSQL_ROOT_PASSWORD: password
