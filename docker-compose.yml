@@ -23,6 +23,8 @@ services:
     image: aeefg-survey-backend:latest 
     build: ./Backend
     container_name: backend-service
+    ports:
+      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/surveydb?useUnicode=true&characterEncoding=UTF-8&useSSL=true
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
