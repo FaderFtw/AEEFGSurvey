@@ -32015,17 +32015,35 @@
                         }], console.log(this.section1)
                     }
                     setSection2() {
-                        this.section2 = [], this.questionsSurvey.forEach(e => {
-                            "Section 2: Attitudes" == e.title && e.data.forEach((e, t) => {
-                                this.pieChartData.push([this.filtredResult.filter(e => ["Non d\u2019accord", "Disagree", "\u063a\u064a\u0631 \u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["Neutre", "Neutral", "\u0645\u062d\u0627\u064a\u062f"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["D\u2019accord", "Agree", "\u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["Tout \xe0 fait d\u2019accord", "Strongly Agree", "\u0645\u0648\u0627\u0641\u0642 \u062a\u0645\u0627\u0645\u064b\u0627"].includes(e.responses[10 + t].response)).length]), this.section2.push({
-                                    question: e.question,
-                                    nondaccord: this.filtredResult.filter(e => ["Non d\u2019accord", "Disagree", "\u063a\u064a\u0631 \u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length,
-                                    neutre: this.filtredResult.filter(e => ["Neutre", "Neutral", "\u0645\u062d\u0627\u064a\u062f"].includes(e.responses[10 + t].response)).length,
-                                    daccord: this.filtredResult.filter(e => ["D\u2019accord", "Agree", "\u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length,
-                                    toutdaccord: this.filtredResult.filter(e => ["Tout \xe0 fait d\u2019accord", "Strongly Agree", "\u0645\u0648\u0627\u0641\u0642 \u062a\u0645\u0627\u0645\u064b\u0627"].includes(e.responses[10 + t].response)).length
-                                })
-                            })
-                        }), this.pieChartLabels = ["Non d\u2019accord", "Neutre", "D\u2019accord", "Tout \xe0 fait d\u2019accord"], console.log(this.pieChartData), console.log(this.section2)
+                        // Reset the pie chart data before applying the filter
+                        this.pieChartData = [];
+                        this.section2 = [];
+
+                        this.questionsSurvey.forEach(e => {
+                            if ("Section 2: Attitudes" === e.title) {
+                                e.data.forEach((e, t) => {
+                                    let nondaccord = this.filtredResult.filter(e => ["Non d’accord", "Disagree", "غير موافق"].includes(e.responses[10 + t].response)).length;
+                                    let neutre = this.filtredResult.filter(e => ["Neutre", "Neutral", "محايد"].includes(e.responses[10 + t].response)).length;
+                                    let daccord = this.filtredResult.filter(e => ["D’accord", "Agree", "موافق"].includes(e.responses[10 + t].response)).length;
+                                    let toutdaccord = this.filtredResult.filter(e => ["Tout à fait d’accord", "Strongly Agree", "موافق تمامًا"].includes(e.responses[10 + t].response)).length;
+
+                                    this.pieChartData.push([nondaccord, neutre, daccord, toutdaccord]);
+
+                                    this.section2.push({
+                                        question: e.question,
+                                        nondaccord,
+                                        neutre,
+                                        daccord,
+                                        toutdaccord
+                                    });
+                                });
+                            }
+                        });
+
+                        this.pieChartLabels = ["Non d’accord", "Neutre", "D’accord", "Tout à fait d’accord"];
+
+                        console.log(this.pieChartData);
+                        console.log(this.section2);
                     }
                     setSection3() {
                         this.section3 = [], this.questionsSurvey.forEach(e => {

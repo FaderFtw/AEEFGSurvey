@@ -32015,17 +32015,35 @@
                         }], console.log(this.section1)
                     }
                     setSection2() {
-                        this.section2 = [], this.questionsSurvey.forEach(e => {
-                            "Section 2: Attitudes" == e.title && e.data.forEach((e, t) => {
-                                this.pieChartData.push([this.filtredResult.filter(e => ["Non d\u2019accord", "Disagree", "\u063a\u064a\u0631 \u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["Neutre", "Neutral", "\u0645\u062d\u0627\u064a\u062f"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["D\u2019accord", "Agree", "\u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length, this.filtredResult.filter(e => ["Tout \xe0 fait d\u2019accord", "Strongly Agree", "\u0645\u0648\u0627\u0641\u0642 \u062a\u0645\u0627\u0645\u064b\u0627"].includes(e.responses[10 + t].response)).length]), this.section2.push({
-                                    question: e.question,
-                                    nondaccord: this.filtredResult.filter(e => ["Non d\u2019accord", "Disagree", "\u063a\u064a\u0631 \u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length,
-                                    neutre: this.filtredResult.filter(e => ["Neutre", "Neutral", "\u0645\u062d\u0627\u064a\u062f"].includes(e.responses[10 + t].response)).length,
-                                    daccord: this.filtredResult.filter(e => ["D\u2019accord", "Agree", "\u0645\u0648\u0627\u0641\u0642"].includes(e.responses[10 + t].response)).length,
-                                    toutdaccord: this.filtredResult.filter(e => ["Tout \xe0 fait d\u2019accord", "Strongly Agree", "\u0645\u0648\u0627\u0641\u0642 \u062a\u0645\u0627\u0645\u064b\u0627"].includes(e.responses[10 + t].response)).length
-                                })
-                            })
-                        }), this.pieChartLabels = ["Non d\u2019accord", "Neutre", "D\u2019accord", "Tout \xe0 fait d\u2019accord"], console.log(this.pieChartData), console.log(this.section2)
+                        // Reset the pie chart data before applying the filter
+                        this.pieChartData = [];
+                        this.section2 = [];
+
+                        this.questionsSurvey.forEach(e => {
+                            if ("Section 2: Attitudes" === e.title) {
+                                e.data.forEach((e, t) => {
+                                    let nondaccord = this.filtredResult.filter(e => ["Non d’accord", "Disagree", "غير موافق"].includes(e.responses[10 + t].response)).length;
+                                    let neutre = this.filtredResult.filter(e => ["Neutre", "Neutral", "محايد"].includes(e.responses[10 + t].response)).length;
+                                    let daccord = this.filtredResult.filter(e => ["D’accord", "Agree", "موافق"].includes(e.responses[10 + t].response)).length;
+                                    let toutdaccord = this.filtredResult.filter(e => ["Tout à fait d’accord", "Strongly Agree", "موافق تمامًا"].includes(e.responses[10 + t].response)).length;
+
+                                    this.pieChartData.push([nondaccord, neutre, daccord, toutdaccord]);
+
+                                    this.section2.push({
+                                        question: e.question,
+                                        nondaccord,
+                                        neutre,
+                                        daccord,
+                                        toutdaccord
+                                    });
+                                });
+                            }
+                        });
+
+                        this.pieChartLabels = ["Non d’accord", "Neutre", "D’accord", "Tout à fait d’accord"];
+
+                        console.log(this.pieChartData);
+                        console.log(this.section2);
                     }
                     setSection3() {
                         this.section3 = [], this.questionsSurvey.forEach(e => {
@@ -32188,7 +32206,8 @@
                     "\u0627\u0628\u062a\u062f\u0627\u0626\u064a": ["\u0623\u0648\u0644\u0649", "\u062b\u0627\u0646\u064a\u0629", "\u062b\u0627\u0644\u062b\u0629", "\u0631\u0627\u0628\u0639\u0629", "\u062e\u0627\u0645\u0633\u0629", "\u0633\u0627\u062f\u0633\u0629 "],
                     "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629": ["\u0627\u0644\u0633\u0627\u0628\u0639\u0629 ", "\u0627\u0644\u062b\u0627\u0645\u0646\u0629 ", "\u0627\u0644\u062a\u0627\u0633\u0639\u0629"],
                     "\u062b\u0627\u0646\u0648\u064a": ["\u0627\u0644\u0623\u0648\u0644\u0649", "\u0627\u0644\u062b\u0627\u0646\u064a\u0629", "\u0627\u0644\u062b\u0627\u0644\u062b\u0629", "\u0627\u0644\u0628\u0643\u0627\u0644\u0648\u0631\u064a\u0627"],
-                    "\u062c\u0627\u0645\u0639\u0629": ["\u0627\u0644\u0625\u062c\u0627\u0632\u0629", "\u0645\u0627\u062c\u0633\u062a\u064a\u0631", "\u062f\u0643\u062a\u0648\u0631\u0627\u0647", "\u0645\u0647\u0646\u062f\u0633"]
+                    "\u062c\u0627\u0645\u0639\u0629": ["\u0627\u0644\u0625\u062c\u0627\u0632\u0629", "\u0645\u0627\u062c\u0633\u062a\u064a\u0631", "\u062f\u0643\u062a\u0648\u0631\u0627\u0647", "\u0645\u0647\u0646\u062f\u0633"],
+                    "\u0645\u064f\u062f\u064e\u0631\u0650\u0651\u0633": ["\u0627\u0628\u062a\u062f\u0627\u0626\u064a", "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629", "\u062b\u0627\u0646\u0648\u064a", "\u062c\u0627\u0645\u0639\u0629"]
                 }, {
                     question: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0624\u0633\u0633\u0629 "
                 }, {
@@ -32256,25 +32275,25 @@
                 title: "\u0627\u0644\u0642\u0633\u0645 3: \u0627\u0644\u0645\u0645\u0627\u0631\u0633\u0627\u062a",
                 data: [{
                     question: "\u0647\u0644 \u062a\u0633\u062a\u0639\u0645\u0644  \u0645\u0648\u0627\u062f \u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0630\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0648\u0627\u062d\u062f \u0641\u064a \u062d\u064a\u0627\u062a\u0643 \u0627\u0644\u064a\u0648\u0645\u064a\u0629 \u0645\u062b\u0644 \u0627\u0644\u0623\u0643\u0648\u0627\u0628 \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0648\u0627\u0644\u0634\u0641\u0627\u0637\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0644\u0634\u0631\u0628 \u0627\u0644\u0639\u0635\u064a\u0631 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u0633\u0628\u0642 \u0644\u0643 \u0627\u0644\u0645\u0634\u0627\u0631\u0643\u0629 \u0641\u064a \u0645\u0628\u0627\u062f\u0631\u0627\u062a \u0625\u0639\u0627\u062f\u0629 \u062a\u062f\u0648\u064a\u0631 \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u0623\u0648 \u0627\u0644\u062d\u062f \u0645\u0646 \u0627\u0644\u0646\u0641\u0627\u064a\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0639\u0646\u062f\u0645\u0627 \u062a\u0634\u0627\u0647\u062f \u0646\u0641\u0627\u064a\u0627\u062a \u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u060c \u0647\u0644 \u062a\u0644\u062a\u0642\u0637\u0647\u0627 \u0648\u062a\u0631\u0645\u064a\u0647\u0627 \u0641\u064a \u0633\u0644\u0629 \u0627\u0644\u0645\u0647\u0645\u0644\u0627\u062a \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u0627\u062a\u062e\u0630\u062a \u062e\u0637\u0648\u0627\u062a \u0641\u0639\u0644\u064a\u0629 \u0644\u0644\u062d\u062f \u0645\u0646 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0643 \u0627\u0644\u0634\u062e\u0635\u064a \u0644\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u0641\u064a \u062d\u064a\u0627\u062a\u0643 \u0627\u0644\u064a\u0648\u0645\u064a\u0629 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u0633\u062a\u062e\u062f\u0645 \u0628\u062f\u0627\u0626\u0644\u060c \u0645\u062b\u0644 \u0632\u062c\u0627\u062c\u0627\u062a \u0627\u0644\u0645\u064a\u0627\u0647 \u0623\u0648 \u0627\u0644\u0623\u0643\u064a\u0627\u0633 \u0627\u0644\u0642\u0627\u0628\u0644\u0629 \u0644\u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645\u060c \u0644\u062a\u0642\u0644\u064a\u0644 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0643 \u0644\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u062a\u062e\u0644\u0635 \u0645\u0646 \u0627\u0644\u0646\u0641\u0627\u064a\u0627\u062a \u0627\u0644\u0628\u0644\u0627\u0633\u062a\u064a\u0643\u064a\u0629 \u0628\u0634\u0643\u0644 \u0635\u062d\u064a\u062d \u0639\u0646\u062f \u0630\u0647\u0627\u0628\u0643 \u0644\u0644\u0634\u0627\u0637\u0626 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }, {
                     question: "\u0647\u0644 \u062a\u0634\u0627\u0631\u0643 \u0641\u064a \u0628\u0631\u0627\u0645\u062c \u062a\u0646\u0638\u064a\u0641 \u0627\u0644\u0634\u0648\u0627\u0637\u0626 \u061f",
-                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627 ", "\u0646\u0639\u0645", "\u0644\u0627"]
+                    reponse_possible: ["\u0623\u062d\u064a\u0627\u0646\u064b\u0627", "\u0646\u0639\u0645", "\u0644\u0627"]
                 }]
             }],
                 Dg = [{
@@ -32289,7 +32308,8 @@
                         Primary: ["1st", "2nd", "3rd", "4th", "5th", "6th"],
                         "Middle School": ["7th", "8th", "9th"],
                         Secondary: ["1st", "2nd", "3rd", "Baccalaur\xe9at"],
-                        University: ["Bachelor's", "Master's", "PhD", "Engineering Cycle"]
+                        University: ["Bachelor's", "Master's", "PhD", "Engineering Cycle"],
+                        "Teacher": ["Primary", "Middle School", "Secondary", "University"]
                     }, {
                         question: "Institution name "
                     }, {
@@ -34288,7 +34308,7 @@
                             ngOnInit() { }
                             ngAfterViewInit() { }
                             startQuestions() {
-                                console.log(this.age), this.age && this.ville && this.proffesion && this.education && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
+                                console.log(this.age), this.age && this.ville && this.education && this.educationLevel && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
                             }
                             setLang(e) {
                                 switch (document.getElementById("myVideo").play(), document.getElementById("myAudio").play(), this.lang = e, this.lang) {
@@ -34304,27 +34324,26 @@
                                 this.survey = !0
                             }
                             sendData() {
-                                let e = {
+                                let data = {
                                     gender: this.gender,
                                     age: this.age,
                                     education: this.education,
                                     educationLevel: this.educationLevel,
                                     institution: this.institution,
-                                    proffesion: this.proffesion,
                                     ville: this.ville,
                                     responses: this.responses
                                 };
-                                const t = new ym({
-                                    "Content-Type": "application/json; charset=UTF-8",
-                                    'Accept': 'application/json; charset=UTF-8'
-                                });
-                                this.http.post("/api/survey", e, {
-                                    headers: t
-                                }).subscribe(e => {
-                                    console.log("Response:", e)
-                                }, e => {
-                                    console.error("Error:", e)
-                                })
+
+                                const headers = (new ym)
+                                    .set("Content-Type", "application/json; charset=UTF-8")
+                                    .set("Accept", "application/json; charset=UTF-8");
+
+                                this.http.post("/api/survey", data, {
+                                    headers: headers
+                                }).subscribe(
+                                    response => console.log("Response:", response),
+                                    error => console.error("Error:", error)
+                                );
                             }
                             returnQuestion() {
                                 let e = this.questions[this.activeSection].data[this.activeQuestion].question,
@@ -34377,10 +34396,10 @@
                             vars: 23,
                             consts: [
                                 [1, "video-background", 3, "ngStyle"],
-                                ["src", "./assets/background1.mp4", "autoplay", "", "muted", "", "playsinline", "", "loop", "", "id", "myVideo"],
-                                ["src", "./assets/background1.mp4", "type", "video/mp4"],
-                                ["src", "./assets/placeholder.jpg", "title", "Your browser does not support HTML5 video."],
-                                ["autoplay", "", "id", "myAudio", "loop", "", "src", "./assets/music.mp3", 3, "muted"],
+                                ["src", "/assets/background1.mp4", "autoplay", "", "muted", "", "playsinline", "", "loop", "", "id", "myVideo"],
+                                ["src", "/assets/background1.mp4", "type", "video/mp4"],
+                                ["src", "/assets/placeholder.jpg", "title", "Your browser does not support HTML5 video."],
+                                ["autoplay", "", "id", "myAudio", "loop", "", "src", "/assets/music.mp3", 3, "muted"],
                                 [1, "form-body"],
                                 [1, "mute-icon", 3, "click"],
                                 ["xmlns", "http://www.w3.org/2000/svg", "version", "1.1", 0, "xmlns", "xlink", "http://www.w3.org/1999/xlink", "width", "30", "height", "30", "x", "0", "y", "0", "viewBox", "0 0 448.075 448.075", "style", "enable-background: new 0 0 512 512", 0, "xml", "space", "preserve", "class", "", 4, "ngIf"],
