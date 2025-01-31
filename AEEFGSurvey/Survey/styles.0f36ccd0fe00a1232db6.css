@@ -2659,7 +2659,12 @@ th {
 }
 
 .row > .col-md-6.col-xl-3:last-child .btn {
-  padding: 5px 10px !important;
+  padding: 10px 10px !important;
+  font-size: 12px !important;
+}
+
+.row > .col-md-6.col-xl-3:first-child .btn {
+  padding: 10px 10px !important;
 }
 
 .container-fluid > .row:nth-of-type(2) .card-body {
