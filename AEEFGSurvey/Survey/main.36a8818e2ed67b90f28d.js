@@ -34301,14 +34301,14 @@
                     component: (() => {
                         class e {
                             constructor(e) {
-                                this.http = e, this.title = "aeefg-form", this.isVisible = !0, this.activeSection = 0, this.activeQuestion = 0, this.maxQuestions = 0, this.gender = "male", this.responses = [], this.survey = !1, this.font = "Poppins", this.start = !1, this.surveyDone = !1, this.result = Cg, this.muted = !1, this.percentProgress = 0, this.questionsSurvey = Dg, this.firstForm = !0, setTimeout(() => {
+                                this.http = e, this.title = "aeefg-form", this.isVisible = !0, this.activeSection = 0, this.activeQuestion = 0, this.maxQuestions = 0, this.gender = "", this.responses = [], this.survey = !1, this.font = "Poppins", this.start = !1, this.surveyDone = !1, this.result = Cg, this.muted = !1, this.percentProgress = 0, this.questionsSurvey = Dg, this.firstForm = !0, setTimeout(() => {
                                     this.isVisible = !1
                                 }, 2e3)
                             }
                             ngOnInit() { }
                             ngAfterViewInit() { }
                             startQuestions() {
-                                console.log(this.age), this.age && this.ville && this.education && this.educationLevel && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
+                                console.log(this.age), this.gender && this.age && this.ville && this.education && this.educationLevel && (this.activeSection = 1, this.maxQuestions = this.questions[this.activeSection].data.length)
                             }
                             setLang(e) {
                                 switch (document.getElementById("myVideo").play(), document.getElementById("myAudio").play(), this.lang = e, this.lang) {
