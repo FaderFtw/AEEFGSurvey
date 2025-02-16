@@ -28787,7 +28787,7 @@
                     }, {
                         question: "Quel est votre \xe2ge ?"
                     }, {
-                        question: "Quel est votre niveau d\u2019\xe9ducation ?",
+                        question: "Quel est votre profession ?",
                         reponses: ["Primaire", "Coll\xe8ge", "Secondaire", "Universit\xe9", "Enseignant"],
                         Primaire: ["1\xe8re", "2\xe8me", "3\xe8me", "4\xe8me", "5\xe8me", "6\xe8me"],
                         "Coll\xe8ge": ["7\xe8me", "8\xe8me", "9\xe8me"],
@@ -32201,7 +32201,7 @@
                 }, {
                     question: "\u0643\u0645 \u0639\u0645\u0631\u0643\u061f"
                 }, {
-                    question: "\u0645\u0627 \u0647\u0648 \u0645\u0633\u062a\u0648\u0627\u0643 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u061f",
+                    question: "\u0645\u0627 \u0647\u064A \u0645\u0647\u0646\u062a\u0643\u061f",
                     reponses: ["\u0627\u0628\u062a\u062f\u0627\u0626\u064a", "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629", "\u062b\u0627\u0646\u0648\u064a", "\u062c\u0627\u0645\u0639\u0629", "\u0645\u064f\u062f\u064e\u0631\u0650\u0651\u0633"],
                     "\u0627\u0628\u062a\u062f\u0627\u0626\u064a": ["\u0623\u0648\u0644\u0649", "\u062b\u0627\u0646\u064a\u0629", "\u062b\u0627\u0644\u062b\u0629", "\u0631\u0627\u0628\u0639\u0629", "\u062e\u0627\u0645\u0633\u0629", "\u0633\u0627\u062f\u0633\u0629 "],
                     "\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u064a\u0629": ["\u0627\u0644\u0633\u0627\u0628\u0639\u0629 ", "\u0627\u0644\u062b\u0627\u0645\u0646\u0629 ", "\u0627\u0644\u062a\u0627\u0633\u0639\u0629"],
@@ -32303,7 +32303,7 @@
                     }, {
                         question: "What is your age?"
                     }, {
-                        question: "What is your level of education?",
+                        question: "What is your profession?",
                         reponses: ["Primary", "Middle School", "Secondary", "University", "Teacher"],
                         Primary: ["1st", "2nd", "3rd", "4th", "5th", "6th"],
                         "Middle School": ["7th", "8th", "9th"],
