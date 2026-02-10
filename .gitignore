@@ -1,2 +1,10 @@
 .env
 docker-compose-dev.yml
+AEEFGSurveyApp_key.pem
+WEIRD.txt
+survey_answers.json
+LoadData.py
+BackUps/
+Docs/
+.\AEEFGSurvey\AEEFGSurvey.zip 
+.\AEEFGSurvey\Dashboard.zip

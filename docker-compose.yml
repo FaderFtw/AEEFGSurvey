@@ -1,13 +1,35 @@
-version: '3.8'
-
 services:
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./certbot-webroot:/var/www/certbot 
+    command:
+      - certonly
+      - --webroot
+      - --webroot-path=/var/www/certbot
+      - --email
+      - zafadi30@gmail.com
+      - --agree-tos
+      - --no-eff-email
+      - -d
+      - survey-tn.aeefg.com
+    networks:
+      - app-network
+
   frontend:
     image: aeefg-survey-frontend:latest 
     build: ./AEEFGSurvey
     container_name: frontend-service
     ports:
       - "80:80"
+      - "443:443"
     volumes:
+      - certbot-etc:/etc/letsencrypt:ro
+      - certbot-var:/var/lib/letsencrypt
+      - ./certbot-webroot:/var/www/certbot
       - ./AEEFGSurvey/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./AEEFGSurvey/Survey:/usr/share/nginx/html/Survey
       - ./AEEFGSurvey/Dashboard:/usr/share/nginx/html/Dashboard
@@ -15,7 +37,6 @@ services:
       - backend
     networks:
       - app-network
-    user: nginx
     security_opt:
       - no-new-privileges:true
 
@@ -55,7 +76,7 @@ services:
       - ./mysql/initdb.d:/docker-entrypoint-initdb.d
       - ./mysql/conf.d:/etc/mysql/conf.d:ro
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -78,3 +99,6 @@ networks:
 volumes:
   data:
     driver: local
+  certbot-etc:
+  certbot-var:
+  certbot-webroot:
