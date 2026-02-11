@@ -5,19 +5,11 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - ./certbot-webroot:/var/www/certbot 
-    command:
-      - certonly
-      - --webroot
-      - --webroot-path=/var/www/certbot
-      - --email
-      - zafadi30@gmail.com
-      - --agree-tos
-      - --no-eff-email
-      - -d
-      - survey-tn.aeefg.com
+      - ./certbot-webroot:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot --webroot-path=/var/www/certbot; sleep 12h & wait $${!}; done;'"
     networks:
       - app-network
+    restart: unless-stopped
 
   frontend:
     image: aeefg-survey-frontend:latest 
@@ -39,6 +31,7 @@ services:
       - app-network
     security_opt:
       - no-new-privileges:true
+    restart: unless-stopped
 
   backend:
     image: aeefg-survey-backend:latest 
